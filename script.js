@@ -3,6 +3,19 @@ const ejercicio1 = [
   19, 88, 456, 13, 23, 24,
 ];
 
+// Solucion 1
+console.log("//////////////// 1 ////////////////");
+
+ejercicio1.forEach((numero) => {
+  for (let i = 2; i <= numero; i++) {
+    if (numero % i === 0 && numero != i) {
+      break;
+    } else if (numero % i === 0) {
+      console.log(`${numero} es primo`);
+    }
+  }
+});
+
 const ejercicio2 = [
   {
     nombre: "Gabriel",
@@ -35,3 +48,25 @@ const ejercicio2 = [
     esFamiliar: true,
   },
 ];
+
+// Solucion 2
+console.log("//////////////// 2 ////////////////");
+
+ejercicio2.forEach((invitado) => {
+  if (invitado.edad >= 18 && invitado.esFamiliar) {
+    console.log(`${invitado.nombre}, estas invitadx a la fiesta de Ramón`);
+  }
+});
+
+// Solucion 3
+console.log("//////////////// 3 ////////////////");
+
+function serieFibonacci(limite) {
+  const fibonacci = [0, 1]; // la serie comienza con 0 y 1
+  for (let i = 2; i < limite; i++) { // igualamos a 2 porque es el index que nos falta
+    fibonacci[i] = fibonacci[i - 1] + fibonacci[i - 2]; // en el index 2 se pone la suma de lo que hay en index 1 + lo que hay en index 0
+  }
+  return fibonacci;
+}
+
+console.log(serieFibonacci(50));
